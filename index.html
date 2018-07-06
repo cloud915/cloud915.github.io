@@ -145,6 +145,122 @@
     <div class="outer">
       <section id="main">
   
+    <article   id="post-make blog website by Hexo and github" class="article article-type-post" itemscope itemprop="blogPost">
+  <div data-scroll-reveal="enter top and over 0.7s"  class="article-meta">
+    <a  href="/2018/07/06/make blog website by Hexo and github/" class="article-date">
+  <i class="fa fa-calendar"></i>
+  <time  datetime="2018-07-06T10:16:28.000Z" itemprop="datePublished">2018-07-06</time>
+</a>
+
+    
+
+  </div>
+  <div class="article-inner"  >
+    
+    
+
+      <header class="article-header">
+
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/06/make blog website by Hexo and github/">
+        <i class="fa fa-pencil-square-o  article-title-icon"></i>Hexo+github搭建个人博客</a>
+    </h1>
+  
+
+
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+
+        </br>
+        <span id="busuanzi_container_page_pv">
+          阅读次数<span id="busuanzi_value_page_pv"></span>
+        </span>
+        <h3 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h3><p>软件：git,node.js,hexo,markdown<br>下载并安装git,node.js,markdown，过程略。</p>
+<h4 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h4><p>1、markdown安装完成后，如果使用过程出现如下异常，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">An error occurred with the Html rendering component...</span><br></pre></td></tr></table></figure></p>
+<p>原因:MarkdownPad 2 在win10下 出现HTML 渲染错误(This view has crashed) 的问题.</p>
+<p>解决办法:安装一个SDK的工具包,名叫:awesomium_v1.6.6_sdk_win</p>
+<p>下载地址:<a href="http://markdownpad.com/download/awesomium_v1.6.6_sdk_win.exe" title="awesomium" target="_blank" rel="noopener">awesomium</a></p>
+<p>网络问题下载不了，则百度其他地址。</p>
+<p>2、node.js在安装完成后，要设置下环境变量。</p>
+<p>3、如果在cmd中执行命令出现异常，而异常信息又不够明确，可以尝试使用git bash来执行命令，比如hexo d命令在cmd中，会由于ssh key的问题抛异常，而在git bash中就会有明显提示。</p>
+<h4 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h4><p>开始安装hexo，在cmd中，利用 npm 命令即可安装。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; npm install -g hexo</span><br></pre></td></tr></table></figure>
+<h4 id="搭建本地blog"><a href="#搭建本地blog" class="headerlink" title="搭建本地blog"></a>搭建本地blog</h4><p>提示安装完成后，开始创建个人blog目录。<br>(从这里开始，建议使用git bash执行命令)<br>创建blog目录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; mkdir blog &amp;&amp; <span class="built_in">cd</span> blog</span><br></pre></td></tr></table></figure>
+<p>然后执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; hexo init</span><br></pre></td></tr></table></figure>
+<p>安装依赖包</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; npm install</span><br></pre></td></tr></table></figure>
+<p>至此，本地blog基本文件准备完成，此时执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; hexo g</span><br></pre></td></tr></table></figure>
+<p>生成静态页面，然后启动服务</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; hexo server -p 5000</span><br></pre></td></tr></table></figure>
+<p>此处单独指定了端口号，因为hexo默认使用4000端口，有可能会和foxmail等其他服务端口有冲突。</p>
+<p>启动成功后，会提示打开一个地址<a href="http://localhost:5000,如果页面显示正常，那么本地blog搭建完成。" target="_blank" rel="noopener">http://localhost:5000,如果页面显示正常，那么本地blog搭建完成。</a></p>
+<h4 id="部署blog到github"><a href="#部署blog到github" class="headerlink" title="部署blog到github"></a>部署blog到github</h4><p>github提供了github.io功能，能够帮助我们展示静态的website。</p>
+<p>操作步骤如下</p>
+<p>1、操作前提：在github上注册账号、以github账号名创建一个仓库。</p>
+<p>2、点击进入刚刚创建的仓库，点击settings进入管理页面。<br>3、找到GitHub Pages区域，选个一个主题，完成后点击页面提供的连接，就可以看到自己的blog页面,<a href="https://xxx.github.io" target="_blank" rel="noopener">https://xxx.github.io</a><br>4、回到仓库页面，复制仓库地址ssh或者http方式按自己习惯<br>5、打开本地blog目录，编辑_config.yml文件<br>6、找到deploy配置项，修改如下,注意冒号后面有一个空格</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">	type: git</span><br><span class="line">	repository: 复制的仓库地址</span><br><span class="line">	branch: master</span><br></pre></td></tr></table></figure>
+<p>7、接下来，回到你的cmd/git bash窗口，只需执行三个命令，命令不包含括号内信息：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt; npm install hexo-deployer-git --save （这命令是为了解决hexo新版本的部署问题）</span><br><span class="line"></span><br><span class="line">&gt; hexo g 回车 （这是重新生成blog）</span><br><span class="line"> </span><br><span class="line">&gt; hexo d 回车 （这是将本地blog部署到github的仓库）</span><br></pre></td></tr></table></figure>
+<p>8、再次访问“xxx.github.io”，此时，你应该能看到hexo的欢迎页面。</p>
+<h4 id="配置主题"><a href="#配置主题" class="headerlink" title="配置主题"></a>配置主题</h4><p>1、打开<a href="https://github.com/hexojs/hexo/wiki/Themes" target="_blank" rel="noopener">主题地址</a><br>2、列表的右侧demo连接，是效果图，左侧连接为主题的git仓库<br>3、选择一个喜欢的主题后，进入它的git仓库，将其clone到本地blog目录的themes目录下，执行如下命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; git <span class="built_in">clone</span> 主题仓库地址</span><br><span class="line"></span><br><span class="line">或，在blog目录下执行</span><br><span class="line">&gt; git <span class="built_in">clone</span> 主题仓库地址 themes/自定义目录名</span><br></pre></td></tr></table></figure>
+<p>下载完成后，得到的目录比如为： /themes/mythemes</p>
+<p>4、编辑_config.yml文件，找到themes配置项，修改为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: mythemes</span><br></pre></td></tr></table></figure>
+<p>5、重新编译blog并上传到git：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; hexo g</span><br><span class="line">&gt; hexo d</span><br></pre></td></tr></table></figure>
+<p>执行完下面命令后，刷新xxx.github.io，可能有延迟。</p>
+<h4 id="编写与发布blog"><a href="#编写与发布blog" class="headerlink" title="编写与发布blog"></a>编写与发布blog</h4><p>在blog目录的/source/_posts/，就是用于发表的博文目录。<br>使用markdown创建好博文后，复制到该目录下，在执行上一节的第5步，就可以将博文上传到github上。</p>
+<hr>
+<p>至此，个人blog搭建完成。建议备份本地blog目录，防止源文件丢失。</p>
+<p>参考：</p>
+<p><a href="http://www.cnblogs.com/dantefung/p/d8c48ba8030bcab7cfc364d423186fee.html" target="_blank" rel="noopener">http://www.cnblogs.com/dantefung/p/d8c48ba8030bcab7cfc364d423186fee.html</a></p>
+<p><a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">https://hexo.io/docs/server.html</a></p>
+<p><a href="http://ibruce.info/2013/11/26/markdown/" target="_blank" rel="noopener">http://ibruce.info/2013/11/26/markdown/</a></p>
+<p><a href="https://blog.csdn.net/geekqian/article/details/78342581" target="_blank" rel="noopener">https://blog.csdn.net/geekqian/article/details/78342581</a></p>
+<p><a href="https://blog.csdn.net/weixin_40426638/article/details/80336881" target="_blank" rel="noopener">https://blog.csdn.net/weixin_40426638/article/details/80336881</a></p>
+
+      
+
+    </div>
+
+
+
+
+
+    <footer class="article-footer">
+      
+        <a data-url="https://cloud915.github.io/2018/07/06/make blog website by Hexo and github/" data-id="cjj9vei4z0001twvdjmu64sox" class="article-share-link" data-share="baidu" data-title="Hexo+github搭建个人博客">分享到</a>
+      
+
+      
+        <a href="https://cloud915.github.io/2018/07/06/make blog website by Hexo and github/#gitalk-container" class="article-comment-link">评论</a>
+      
+
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article   id="post-test" class="article article-type-post" itemscope itemprop="blogPost">
   <div data-scroll-reveal="enter top and over 0.7s"  class="article-meta">
     <a  href="/2018/07/06/test/" class="article-date">
@@ -266,7 +382,7 @@ println( s )
 
     <footer class="article-footer">
       
-        <a data-url="https://cloud915.github.io/2018/07/06/test/" data-id="cjj9sqncr0001e8vdurm6y6qu" class="article-share-link" data-share="baidu" data-title="test">分享到</a>
+        <a data-url="https://cloud915.github.io/2018/07/06/test/" data-id="cjj9vei520002twvdp1zbed55" class="article-share-link" data-share="baidu" data-title="test">分享到</a>
       
 
       
@@ -346,7 +462,7 @@ println( s )
 
     <footer class="article-footer">
       
-        <a data-url="https://cloud915.github.io/2018/07/06/hello-world/" data-id="cjj9sqnci0000e8vdz8jpkng3" class="article-share-link" data-share="baidu" data-title="Hello World">分享到</a>
+        <a data-url="https://cloud915.github.io/2018/07/06/hello-world/" data-id="cjj9vei4q0000twvd9nvk0fut" class="article-share-link" data-share="baidu" data-title="Hello World">分享到</a>
       
 
       
@@ -381,6 +497,10 @@ println( s )
     <h3 class="widget-title" data-scroll-reveal="enter top and over 0.7s"><i class="fa fa-file-text-o"></i>近期文章</h3>
     <div class="widget">
       <ul>
+        
+          <li onclick="javascript:document.getElementById('recentpost_item').click();">
+            <a id="recentpost_item" href="/2018/07/06/make blog website by Hexo and github/">Hexo+github搭建个人博客</a>
+          </li>
         
           <li onclick="javascript:document.getElementById('recentpost_item').click();">
             <a id="recentpost_item" href="/2018/07/06/test/">test</a>
@@ -419,8 +539,8 @@ println( s )
   <div class="widget-wrap">
     <h3 class="widget-title" data-scroll-reveal="enter top and over 0.7s" ><i class="fa fa-archive"></i>归档</h3>
     <div class="widget">
-      <!-- <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a><span class="archive-list-count">2</span></li></ul> -->
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">2018年07月</a><span class="archive-list-count">2</span></li></ul>
+      <!-- <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a><span class="archive-list-count">3</span></li></ul> -->
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">2018年07月</a><span class="archive-list-count">3</span></li></ul>
     </div>
   </div>
 
