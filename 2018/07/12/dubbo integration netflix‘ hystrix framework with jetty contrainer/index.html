@@ -8,16 +8,20 @@
 
   
 
-  <title>Iron Hand</title>
+  <title>dubbo集成netflix原生的hystrix框架 | Iron Hand</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Iron Hand">
-<meta property="og:url" content="https://cloud915.github.io/index.html">
+  <meta name="description" content="（一）需求描述需要将一个现有项目添加熔断功0能，而这个项目的技术栈为spring、dubbo等，并且使用的dubbo-Main方式启动。 （二）存在问题由于项目并未使用web容器、也未使用spring-boot。而目前能拿到的资料中，都是在spring-boot下进行hystrix集成的，不得不说spring-boot的开箱即用理念，集成起来真的非常方便。因此，基于当前结构无法快速集成，也就需要开">
+<meta property="og:type" content="article">
+<meta property="og:title" content="dubbo集成netflix原生的hystrix框架">
+<meta property="og:url" content="https://cloud915.github.io/2018/07/12/dubbo integration netflix‘ hystrix framework with jetty contrainer/index.html">
 <meta property="og:site_name" content="Iron Hand">
+<meta property="og:description" content="（一）需求描述需要将一个现有项目添加熔断功0能，而这个项目的技术栈为spring、dubbo等，并且使用的dubbo-Main方式启动。 （二）存在问题由于项目并未使用web容器、也未使用spring-boot。而目前能拿到的资料中，都是在spring-boot下进行hystrix集成的，不得不说spring-boot的开箱即用理念，集成起来真的非常方便。因此，基于当前结构无法快速集成，也就需要开">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-07-13T03:24:55.873Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Iron Hand">
+<meta name="twitter:title" content="dubbo集成netflix原生的hystrix框架">
+<meta name="twitter:description" content="（一）需求描述需要将一个现有项目添加熔断功0能，而这个项目的技术栈为spring、dubbo等，并且使用的dubbo-Main方式启动。 （二）存在问题由于项目并未使用web容器、也未使用spring-boot。而目前能拿到的资料中，都是在spring-boot下进行hystrix集成的，不得不说spring-boot的开箱即用理念，集成起来真的非常方便。因此，基于当前结构无法快速集成，也就需要开">
 
   
 
@@ -143,9 +147,7 @@
 </header>
 
     <div class="outer">
-      <section id="main">
-  
-    <article   id="post-dubbo integration netflix‘ hystrix framework with jetty contrainer" class="article article-type-post" itemscope itemprop="blogPost">
+      <section id="main"><article   id="post-dubbo integration netflix‘ hystrix framework with jetty contrainer" class="article article-type-post" itemscope itemprop="blogPost">
   <div data-scroll-reveal="enter top and over 0.7s"  class="article-meta">
     <a  href="/2018/07/12/dubbo integration netflix‘ hystrix framework with jetty contrainer/" class="article-date">
   <i class="fa fa-calendar"></i>
@@ -163,9 +165,8 @@
 
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/12/dubbo integration netflix‘ hystrix framework with jetty contrainer/">
-        <i class="fa fa-pencil-square-o  article-title-icon"></i>dubbo集成netflix原生的hystrix框架</a>
+    <h1 class="article-title" itemprop="name">
+      <i class="fa fa-pencil-square-o  article-title-icon"></i>dubbo集成netflix原生的hystrix框架
     </h1>
   
 
@@ -230,358 +231,35 @@
     </footer>
   </div>
   
+    
+<nav id="article-nav">
+  
+    <a href="/2018/07/06/make blog website by Hexo and github/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">← 上一篇</strong>
+      <div class="article-nav-title">Hexo+github搭建个人博客</div>
+    </a>
+  
+  
+</nav>
+
+
+  
 </article>
 
 
 
 
-
-
-
-
-
-  
-    <article   id="post-make blog website by Hexo and github" class="article article-type-post" itemscope itemprop="blogPost">
-  <div data-scroll-reveal="enter top and over 0.7s"  class="article-meta">
-    <a  href="/2018/07/06/make blog website by Hexo and github/" class="article-date">
-  <i class="fa fa-calendar"></i>
-  <time  datetime="2018-07-06T10:16:28.000Z" itemprop="datePublished">2018-07-06</time>
-</a>
-
-    
-
-  </div>
-  <div class="article-inner"  >
-    
-    
-
-      <header class="article-header">
-
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/06/make blog website by Hexo and github/">
-        <i class="fa fa-pencil-square-o  article-title-icon"></i>Hexo+github搭建个人博客</a>
-    </h1>
-  
-
-
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-
-        </br>
-        <span id="busuanzi_container_page_pv">
-          阅读次数<span id="busuanzi_value_page_pv"></span>
-        </span>
-        <h3 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h3><p>软件：git,node.js,hexo,markdown<br>下载并安装git,node.js,markdown，过程略。</p>
-<h4 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h4><p>1、markdown安装完成后，如果使用过程出现如下异常，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">An error occurred with the Html rendering component...</span><br></pre></td></tr></table></figure></p>
-<p>原因:MarkdownPad 2 在win10下 出现HTML 渲染错误(This view has crashed) 的问题.</p>
-<p>解决办法:安装一个SDK的工具包,名叫:awesomium_v1.6.6_sdk_win</p>
-<p>下载地址:<a href="http://markdownpad.com/download/awesomium_v1.6.6_sdk_win.exe" title="awesomium" target="_blank" rel="noopener">awesomium</a></p>
-<p>网络问题下载不了，则百度其他地址。</p>
-<p>2、node.js在安装完成后，要设置下环境变量。</p>
-<p>3、如果在cmd中执行命令出现异常，而异常信息又不够明确，可以尝试使用git bash来执行命令，比如hexo d命令在cmd中，会由于ssh key的问题抛异常，而在git bash中就会有明显提示。</p>
-<h4 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h4><p>开始安装hexo，在cmd中，利用 npm 命令即可安装。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; npm install -g hexo</span><br></pre></td></tr></table></figure>
-<h4 id="搭建本地blog"><a href="#搭建本地blog" class="headerlink" title="搭建本地blog"></a>搭建本地blog</h4><p>提示安装完成后，开始创建个人blog目录。<br>(从这里开始，建议使用git bash执行命令)<br>创建blog目录</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; mkdir blog &amp;&amp; <span class="built_in">cd</span> blog</span><br></pre></td></tr></table></figure>
-<p>然后执行</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; hexo init</span><br></pre></td></tr></table></figure>
-<p>安装依赖包</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; npm install</span><br></pre></td></tr></table></figure>
-<p>至此，本地blog基本文件准备完成，此时执行</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; hexo g</span><br></pre></td></tr></table></figure>
-<p>生成静态页面，然后启动服务</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; hexo server -p 5000</span><br></pre></td></tr></table></figure>
-<p>此处单独指定了端口号，因为hexo默认使用4000端口，有可能会和foxmail等其他服务端口有冲突。</p>
-<p>启动成功后，会提示打开一个地址<a href="http://localhost:5000,如果页面显示正常，那么本地blog搭建完成。" target="_blank" rel="noopener">http://localhost:5000,如果页面显示正常，那么本地blog搭建完成。</a></p>
-<h4 id="部署blog到github"><a href="#部署blog到github" class="headerlink" title="部署blog到github"></a>部署blog到github</h4><p>github提供了github.io功能，能够帮助我们展示静态的website。</p>
-<p>操作步骤如下</p>
-<p>1、操作前提：在github上注册账号、以github账号名创建一个仓库。</p>
-<p>2、点击进入刚刚创建的仓库，点击settings进入管理页面。<br>3、找到GitHub Pages区域，选个一个主题，完成后点击页面提供的连接，就可以看到自己的blog页面,<a href="https://xxx.github.io" target="_blank" rel="noopener">https://xxx.github.io</a><br>4、回到仓库页面，复制仓库地址ssh或者http方式按自己习惯<br>5、打开本地blog目录，编辑_config.yml文件<br>6、找到deploy配置项，修改如下,注意冒号后面有一个空格</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">	type: git</span><br><span class="line">	repository: 复制的仓库地址</span><br><span class="line">	branch: master</span><br></pre></td></tr></table></figure>
-<p>7、接下来，回到你的cmd/git bash窗口，只需执行三个命令，命令不包含括号内信息：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt; npm install hexo-deployer-git --save （这命令是为了解决hexo新版本的部署问题）</span><br><span class="line"></span><br><span class="line">&gt; hexo g 回车 （这是重新生成blog）</span><br><span class="line"> </span><br><span class="line">&gt; hexo d 回车 （这是将本地blog部署到github的仓库）</span><br></pre></td></tr></table></figure>
-<p>8、再次访问“xxx.github.io”，此时，你应该能看到hexo的欢迎页面。</p>
-<h4 id="配置主题"><a href="#配置主题" class="headerlink" title="配置主题"></a>配置主题</h4><p>1、打开<a href="https://github.com/hexojs/hexo/wiki/Themes" target="_blank" rel="noopener">主题地址</a><br>2、列表的右侧demo连接，是效果图，左侧连接为主题的git仓库<br>3、选择一个喜欢的主题后，进入它的git仓库，将其clone到本地blog目录的themes目录下，执行如下命令</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; git <span class="built_in">clone</span> 主题仓库地址</span><br><span class="line"></span><br><span class="line">或，在blog目录下执行</span><br><span class="line">&gt; git <span class="built_in">clone</span> 主题仓库地址 themes/自定义目录名</span><br></pre></td></tr></table></figure>
-<p>下载完成后，得到的目录比如为： /themes/mythemes</p>
-<p>4、编辑_config.yml文件，找到themes配置项，修改为</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: mythemes</span><br></pre></td></tr></table></figure>
-<p>5、重新编译blog并上传到git：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; hexo g</span><br><span class="line">&gt; hexo d</span><br></pre></td></tr></table></figure>
-<p>执行完下面命令后，刷新xxx.github.io，可能有延迟。</p>
-<h4 id="编写与发布blog"><a href="#编写与发布blog" class="headerlink" title="编写与发布blog"></a>编写与发布blog</h4><p>在blog目录的/source/_posts/，就是用于发表的博文目录。<br>使用markdown创建好博文后，复制到该目录下，在执行上一节的第5步，就可以将博文上传到github上。</p>
-<hr>
-<p>至此，个人blog搭建完成。建议备份本地blog目录，防止源文件丢失。</p>
-<p>参考：</p>
-<p><a href="http://www.cnblogs.com/dantefung/p/d8c48ba8030bcab7cfc364d423186fee.html" target="_blank" rel="noopener">http://www.cnblogs.com/dantefung/p/d8c48ba8030bcab7cfc364d423186fee.html</a></p>
-<p><a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">https://hexo.io/docs/server.html</a></p>
-<p><a href="http://ibruce.info/2013/11/26/markdown/" target="_blank" rel="noopener">http://ibruce.info/2013/11/26/markdown/</a></p>
-<p><a href="https://blog.csdn.net/geekqian/article/details/78342581" target="_blank" rel="noopener">https://blog.csdn.net/geekqian/article/details/78342581</a></p>
-<p><a href="https://blog.csdn.net/weixin_40426638/article/details/80336881" target="_blank" rel="noopener">https://blog.csdn.net/weixin_40426638/article/details/80336881</a></p>
-
-      
-
+  <section class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </div>
+  </section> 
 
 
 
 
+  <div id="gitalk-container"></div>
 
-    <footer class="article-footer">
-      
-        <a data-url="https://cloud915.github.io/2018/07/06/make blog website by Hexo and github/" data-id="cjjjf7vxw000058vdxg2chj9v" class="article-share-link" data-share="baidu" data-title="Hexo+github搭建个人博客">分享到</a>
-      
-
-      
-        <a href="https://cloud915.github.io/2018/07/06/make blog website by Hexo and github/#gitalk-container" class="article-comment-link">评论</a>
-      
-
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article   id="post-test" class="article article-type-post" itemscope itemprop="blogPost">
-  <div data-scroll-reveal="enter top and over 0.7s"  class="article-meta">
-    <a  href="/2018/07/06/test/" class="article-date">
-  <i class="fa fa-calendar"></i>
-  <time  datetime="2018-07-06T06:50:00.000Z" itemprop="datePublished">2018-07-06</time>
-</a>
-
-    
-
-  </div>
-  <div class="article-inner"  >
-    
-    
-
-      <header class="article-header">
-
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/06/test/">
-        <i class="fa fa-pencil-square-o  article-title-icon"></i>test</a>
-    </h1>
-  
-
-
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-
-        </br>
-        <span id="busuanzi_container_page_pv">
-          阅读次数<span id="busuanzi_value_page_pv"></span>
-        </span>
-        <!-- 分割线 -->
-<hr>
-<!-- 引用 -->
-<blockquote>
-<p>引用</p>
-<blockquote>
-<p>引用</p>
-</blockquote>
-</blockquote>
-<p>标题：setext方式</p>
-<h1 id="大标题"><a href="#大标题" class="headerlink" title="大标题"></a>大标题</h1><h2 id="小标题"><a href="#小标题" class="headerlink" title="小标题"></a>小标题</h2><h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><h4 id="java"><a href="#java" class="headerlink" title="java"></a>java</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String str=<span class="string">"aaa"</span>;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method1</span><span class="params">(String str)</span></span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.str=str;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="bash"><a href="#bash" class="headerlink" title="bash"></a>bash</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; hexo g</span><br><span class="line">&gt; hexo d</span><br></pre></td></tr></table></figure>
-<p>代码：行内代码，直接写就行<br>代码：段落代码，每行文字前加4个空格或者1个Tab</p>
-<pre><code>val s = &quot;hello Markdown&quot;
-println( s )
-</code></pre><p>超链接<br><a href="https://cloud915.github.io/" title="悬浮提示">cloud915</a></p>
-<p>图片</p>
-<p><img src="http://wiki.gmfcloud.com/images/logo/default-space-logo-256.png" alt="GitHub Mark" title="GitHub Mark"></p>
-<p>索引超链接<br><a href="http://bruce-sha.github.io" target="_blank" rel="noopener">不如</a></p>
-<p><img src="http://wiki.gmfcloud.com/images/logo/default-space-logo-256.png" alt="GitHub Octocat"></p>
-<p>自动连接<br><a href="http://ibruce.info" target="_blank" rel="noopener">http://ibruce.info</a></p>
-<p>无序列表</p>
-<ul>
-<li>无序列表1</li>
-<li>无序列表2</li>
-<li>无序列表3</li>
-</ul>
-<ul>
-<li>无序列表1</li>
-<li>无序列表2</li>
-<li>无序列表3</li>
-</ul>
-<ul>
-<li>无序列表</li>
-<li>无序列表</li>
-<li>无序列表</li>
-</ul>
-<ol>
-<li>有序列表</li>
-<li>有序列表</li>
-<li>有序列表</li>
-</ol>
-<p>嵌套列表</p>
-<ul>
-<li>嵌套列表<ul>
-<li>嵌套列表</li>
-<li>嵌套列表</li>
-</ul>
-<ul>
-<li>嵌套列表<ul>
-<li>嵌套列表</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>嵌套列表</li>
-</ul>
-<p>转义字符<br>用html的注释，好像只有这样？<br>Markdown中的转义字符为\，转义的有：</p>
-<p>\ 反斜杠</p>
-<p>` 反引号</p>
-<p>* 星号</p>
-<p>_ 下划线</p>
-<p>{} 大括号</p>
-<p>[] 中括号</p>
-<p>() 小括号</p>
-<p># 井号</p>
-<p>+ 加号</p>
-<p>- 减号</p>
-<p>. 英文句号</p>
-<p>! 感叹号</p>
-<p>文本中可直接用html标签，但是要前后加上空行。</p>
-<p>表格<br>Markdown的扩展语法，hexo不支持</p>
-<p>|| <em>Year</em> || <em>Temperature (low)</em> || <em>Temperature (high)</em> ||<br>|| 1900 || -10 || 25 ||<br>|| 1910 || -15 || 30 ||<br>|| 1920 || -10 || 32 ||</p>
-<hr>
-<p><img src="./resource/01.png" alt="./resource/01.png" title="test"></p>
-
-      
-
-    </div>
-
-
-
-
-
-    <footer class="article-footer">
-      
-        <a data-url="https://cloud915.github.io/2018/07/06/test/" data-id="cjjjf7vy5000258vdvjcp56xd" class="article-share-link" data-share="baidu" data-title="test">分享到</a>
-      
-
-      
-        <a href="https://cloud915.github.io/2018/07/06/test/#gitalk-container" class="article-comment-link">评论</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工具/">工具</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/文章/">文章</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/测试/">测试</a></li></ul>
-
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article   id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div data-scroll-reveal="enter top and over 0.7s"  class="article-meta">
-    <a  href="/2018/07/06/hello-world/" class="article-date">
-  <i class="fa fa-calendar"></i>
-  <time  datetime="2018-07-06T02:10:40.226Z" itemprop="datePublished">2018-07-06</time>
-</a>
-
-    
-
-  </div>
-  <div class="article-inner"  >
-    
-    
-
-      <header class="article-header">
-
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/06/hello-world/">
-        <i class="fa fa-pencil-square-o  article-title-icon"></i>Hello World</a>
-    </h1>
-  
-
-
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-
-        </br>
-        <span id="busuanzi_container_page_pv">
-          阅读次数<span id="busuanzi_value_page_pv"></span>
-        </span>
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-
-    </div>
-
-
-
-
-
-    <footer class="article-footer">
-      
-        <a data-url="https://cloud915.github.io/2018/07/06/hello-world/" data-id="cjjjf7vy2000158vda4x7pa11" class="article-share-link" data-share="baidu" data-title="Hello World">分享到</a>
-      
-
-      
-        <a href="https://cloud915.github.io/2018/07/06/hello-world/#gitalk-container" class="article-comment-link">评论</a>
-      
-
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-  
 
 </section>
       
@@ -1129,13 +807,13 @@ $(document).on("click", "ul.archive-list li.archive-list-item", function () {
   <script>
     var disqus_shortname = 'rapcoder';
     if (page.permalink){ 
-      var disqus_url = '';
+      var disqus_url = 'https://cloud915.github.io/2018/07/12/dubbo integration netflix‘ hystrix framework with jetty contrainer/';
      } 
     (function(){
       var dsq = document.createElement('script');
       dsq.type = 'text/javascript';
       dsq.async = true;
-      dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
   </script>
